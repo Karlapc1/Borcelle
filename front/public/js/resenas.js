@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para obtener reseñas del backend
     async function obtenerResenas() {
         try {
-            const response = await fetch('http://localhost:4000/api/resena/obtenerresenas');
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/resena/obtenerresenas');
             if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
             resenas = await response.json();
             renderPage(currentPage); // Mostrar la primera página
