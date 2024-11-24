@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para obtener usuarios del backend
     async function obtenerUsuarios() {
         try {
-            const response = await fetch('http://localhost:4000/api/usuario/obtenerusuarios');
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/usuario/obtenerusuarios');
             if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
             usuarios = await response.json();
             renderPage(currentPage); // Mostrar la primera página
