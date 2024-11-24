@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function obtenerPastelesPersonalizados() {
         try {
-            const response = await fetch('http://localhost:4000/api/PastelPersonalizado/obtenerpastelPersonalizado');
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/PastelPersonalizado/obtenerpastelPersonalizado');
             if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
             
             pastelesPersonalizados = await response.json();
