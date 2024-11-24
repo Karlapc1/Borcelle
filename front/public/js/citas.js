@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function obtenerCitas() {
         try {
-            const response = await fetch('http://localhost:4000/api/cita/obtenercitas');
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/cita/obtenercitas');
             if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
 
             citas = await response.json();
