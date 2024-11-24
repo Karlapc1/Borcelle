@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Función para obtener todos los pedidos
   async function obtenerPedidos() {
       try {
-          const response = await fetch('http://localhost:4000/api/pedido/obtenerpedidos');
+          const response = await fetch('https://borcelle-1xpu.onrender.com/api/pedido/obtenerpedidos');
           if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
 
           pedidos = await response.json();
