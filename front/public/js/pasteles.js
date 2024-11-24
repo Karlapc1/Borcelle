@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function obtenerPasteles() {
         try {
-            const response = await fetch('http://localhost:4000/api/pastel/obtenerpasteles');
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/pastel/obtenerpasteles');
             if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
             
             pasteles = await response.json();
