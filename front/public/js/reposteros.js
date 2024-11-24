@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function obtenerReposteros() {
       try {
-          const response = await fetch('http://localhost:4000/api/repostero/obtenereposteros');
+          const response = await fetch('https://borcelle-1xpu.onrender.com/api/repostero/obtenereposteros');
           if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
           
           reposteros = await response.json();
