@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function eliminarCategoria(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/categoria/elimcategorias/${id}`, {
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/categoria/elimcategorias/${id}`, {
                 method: 'DELETE'
             });
 
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function obtenerCategoriaPorId(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/categoria/categorias/${id}`);
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/categoria/categorias/${id}`);
             if (!response.ok) throw new Error(`Categoría no encontrada: ${response.status}`);
             
             const categoria = await response.json();
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function actualizarCategoria(id, data) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/categoria/actcategorias/${id}`, {
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/categoria/actcategorias/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = { nombre };
 
         try {
-            const response = await fetch('https://brc.onrender.com/api/categoria/crearcategorias', {
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/categoria/crearcategorias', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
