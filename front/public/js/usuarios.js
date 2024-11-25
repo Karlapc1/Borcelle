@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para eliminar un usuario
     async function eliminarUsuario(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/usuario/elimusuarios/${id}`, {
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/usuario/elimusuarios/${id}`, {
                 method: 'DELETE'
             });
             if (!response.ok) throw new Error(`Error al eliminar el usuario: ${response.status}`);
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para obtener usuario por ID
     async function obtenerUsuarioPorId(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/usuario/usuarios/${id}`);
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/usuario/usuarios/${id}`);
             if (!response.ok) throw new Error(`Usuario no encontrado: ${response.status}`);
             const usuario = await response.json();
             mostrarUsuarios([usuario]);
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = { nombre, correo, contrasena, direccion, telefono, tipo_usuario: tipoUsuario };
 
         try {
-            const response = await fetch('https://brc.onrender.com/api/usuario/crearusuarios', {
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/usuario/crearusuarios', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
