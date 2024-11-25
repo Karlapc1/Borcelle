@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para eliminar una reseña
     async function eliminarResena(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/resena/elimresenas/${id}`, {
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/resena/elimresenas/${id}`, {
                 method: 'DELETE'
             });
             if (!response.ok) throw new Error(`Error al eliminar la reseña: ${response.status}`);
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para obtener reseña por ID
     async function obtenerResenaPorId(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/resena/resenas/${id}`);
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/resena/resenas/${id}`);
             if (!response.ok) throw new Error(`Reseña no encontrada: ${response.status}`);
             const resena = await response.json();
             mostrarResenas([resena]);
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para actualizar una reseña
     async function actualizarResena(id, data) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/resena/actresenas/${id}`, {
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/resena/actresenas/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = { id_usuario: idUsuario, Comentario: comentario, Calificacion: calificacion, FechaResena: fechaResena };
 
         try {
-            const response = await fetch('https://brc.onrender.com/api/resena/crearresenas', {
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/resena/crearresenas', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
