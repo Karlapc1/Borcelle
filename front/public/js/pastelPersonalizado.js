@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function eliminarPastelPersonalizado(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/PastelPersonalizado/elimpastelPersonalizado/${id}`, {
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/PastelPersonalizado/elimpastelPersonalizado/${id}`, {
                 method: 'DELETE'
             });
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function obtenerPastelPersonalizadoPorId(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/PastelPersonalizado/pastelPersonalizado/${id}`);
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/PastelPersonalizado/pastelPersonalizado/${id}`);
             if (!response.ok) throw new Error(`Pastel personalizado no encontrado: ${response.status}`);
             
             const pastel = await response.json();
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = { Bizcocho: bizcocho, Relleno: relleno, Decoraciones: decoraciones, Precio: precio };
 
         try {
-            const response = await fetch('https://brc.onrender.com/api/PastelPersonalizado/crearpastelPersonalizado', {
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/PastelPersonalizado/crearpastelPersonalizado', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
