@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function eliminarPastel(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/pastel/elimpasteles/${id}`, {
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/pastel/elimpasteles/${id}`, {
                 method: 'DELETE'
             });
 
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function obtenerPastelPorId(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/pastel/pasteles/${id}`);
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/pastel/pasteles/${id}`);
             if (!response.ok) throw new Error(`Pastel no encontrado: ${response.status}`);
             
             const pastel = await response.json();
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function actualizarPastel(id, data) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/pastel/actpasteles/${id}`, {
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/pastel/actpasteles/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = { nombre, descripcion, precio, popularidad, destacado };
 
         try {
-            const response = await fetch('https://brc.onrender.com/api/pastel/crearpasteles', {
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/pastel/crearpasteles', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
