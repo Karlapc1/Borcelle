@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function eliminarRepostero(id) {
       try {
-          const response = await fetch(`https://brc.onrender.com/api/repostero/elimreposteros/${id}`, {
+          const response = await fetch(`https://borcelle-1xpu.onrender.com/api/repostero/elimreposteros/${id}`, {
               method: 'DELETE'
           });
 
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function obtenerReposteroPorId(id) {
       try {
-          const response = await fetch(`https://brc.onrender.com/api/repostero/reposteros/${id}`);
+          const response = await fetch(`https://borcelle-1xpu.onrender.com/api/repostero/reposteros/${id}`);
           if (!response.ok) throw new Error(`Repostero no encontrado: ${response.status}`);
           
           const repostero = await response.json();
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function actualizarRepostero(id, data) {
       try {
-          const response = await fetch(`https://brc.onrender.com/api/repostero/actreposteros/${id}`, {
+          const response = await fetch(`https://borcelle-1xpu.onrender.com/api/repostero/actreposteros/${id}`, {
               method: 'PUT',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(data)
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       try {
-          const response = await fetch('https://brc.onrender.com/api/repostero/creareposteros', {
+          const response = await fetch('https://borcelle-1xpu.onrender.com/api/repostero/creareposteros', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(data)
