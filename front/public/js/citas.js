@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function eliminarCita(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/cita/elimcitas/${id}`, {
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/cita/elimcitas/${id}`, {
                 method: 'DELETE'
             });
 
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function obtenerCitaPorId(id) {
         try {
-            const response = await fetch(`https://brc.onrender.com/api/cita/citas/${id}`);
+            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/cita/citas/${id}`);
             if (!response.ok) throw new Error(`Cita no encontrada: ${response.status}`);
 
             const cita = await response.json();
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const response = await fetch('https://brc.onrender.com/api/cita/crearcitas', {
+            const response = await fetch('https://borcelle-1xpu.onrender.com/api/cita/crearcitas', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
