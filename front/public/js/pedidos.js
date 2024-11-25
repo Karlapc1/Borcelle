@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Función para eliminar un pedido
   async function eliminarPedido(id) {
       try {
-          const response = await fetch(`https://brc.onrender.com/api/pedido/elimpedido/${id}`, {
+          const response = await fetch(`https://borcelle-1xpu.onrender.com/api/pedido/elimpedido/${id}`, {
               method: 'DELETE'
           });
 
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Función para obtener pedido por ID y mostrarlo en la tabla
   async function obtenerPedidoPorId(id) {
       try {
-          const response = await fetch(`https://brc.onrender.com/api/pedido/pedido/${id}`);
+          const response = await fetch(`https://borcelle-1xpu.onrender.com/api/pedido/pedido/${id}`);
           if (!response.ok) throw new Error(`Pedido no encontrado: ${response.status}`);
 
           const pedido = await response.json();
