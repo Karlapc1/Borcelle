@@ -114,19 +114,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Función para actualizar una reseña
-    async function actualizarResena(id, data) {
-        try {
-            const response = await fetch(`https://borcelle-1xpu.onrender.com/api/resena/actresenas/${id}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            if (!response.ok) throw new Error(`Error al actualizar la reseña: ${response.status}`);
-            obtenerResenas();
-        } catch (error) {
-            console.error("Error al actualizar reseña:", error);
-        }
+   async function actualizarResena(id, data) {
+    if (!id || typeof id !== "number") {
+        console.error("ID inválido:", id);
+        return;
     }
+
+    if (!data || typeof data !== "object") {
+        console.error("Datos de actualización inválidos:", data);
+        return;
+    }
+
+    try {
+        const response = await fetch(`https://borcelle-1xpu.onrender.com/api/resena/actresenas/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        // Manejo del estado de la respuesta
+        if (!response.ok) {
+            const errorDetails = await response.json(); // Obtener detalles del error
+            throw new Error(`Error al actualizar la reseña: ${response.status} - ${errorDetails.error || "Detalles no disponibles"}`);
+        }
+
+        console.log("Reseña actualizada con éxito.");
+        obtenerResenas(); // Refrescar lista de reseñas
+    } catch (error) {
+        console.error("Error al actualizar reseña:", error.message || error);
+    }
+}
+
 
     // Evento de actualización de reseña
     actualizarResenaBtn.addEventListener("click", () => {
